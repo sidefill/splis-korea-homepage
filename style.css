@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --text-color: #ffffff;
+    --accent-color: #003399;
+    /* NEXO Blue */
+    --accent-hover: #0044cc;
+    --secondary-bg: #111111;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Geominimalist Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 40px 40px;
+    z-index: -1;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+    gap: 2px;
+}
+
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+}
+
+.logo-main {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    /* Thick, engineering font */
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    /* White Text */
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    font-style: italic;
+    /* Speed/Motion feel */
+}
+
+.logo-wave {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 120%;
+    height: 24px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12 Q 25 24 50 12 T 100 12' fill='none' stroke='%23003399' stroke-width='3' opacity='0.9'/%3E%3C/svg%3E") no-repeat center;
+    background-size: cover;
+    transform: translateY(-50%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.logo-sub {
+    font-size: 0.6rem;
+    color: #FFFFFF;
+    /* White Subtext */
+    letter-spacing: 3px;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-left: 2px;
+}
+
+nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.cta-btn {
+    background: var(--accent-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.cta-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Hero Section with Image */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+    background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.6)), url('https://www.systemsintegrationasia.com/wp-content/uploads/2022/10/Nexo_GardenTheatre_main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#sine-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    /* Reduced slightly to prevent clipping */
+    line-height: 1.1;
+    /* Increased line-height */
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero .kinetic-text {
+    display: block;
+    overflow: hidden;
+    height: 1.2em;
+    /* Increased height to fit text comfortably */
+    margin: 0.2em 0;
+}
+
+.hero .kinetic-text span {
+    display: block;
+    animation: slideUp 8s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+
+    0%,
+    20% {
+        transform: translateY(0);
+    }
+
+    25%,
+    45% {
+        transform: translateY(-1.1em);
+    }
+
+    50%,
+    70% {
+        transform: translateY(-2.2em);
+    }
+
+    75%,
+    95% {
+        transform: translateY(-3.3em);
+    }
+
+    100% {
+        transform: translateY(-4.4em);
+    }
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    opacity: 0.6;
+    margin-bottom: 3rem;
+}
+
+/* Grid Sections */
+.section {
+    padding: 100px 5%;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title::before {
+    content: '';
+    width: 40px;
+    height: 4px;
+    background: var(--accent-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    padding: 3rem;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-10px);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 40px 40px;
+    border-color: transparent transparent var(--accent-color) transparent;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.card:hover::after {
+    opacity: 0.5;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    opacity: 0.6;
+}
+
+/* AFC Sound Expansion Interaction in Solutions Card */
+.card-afc {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    /* For <a> tag usage */
+    display: block;
+}
+
+.afc-visualizer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.card-afc .card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.ripple {
+    position: absolute;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    animation: ripple-move 2s linear infinite;
+    opacity: 0;
+}
+
+@keyframes ripple-move {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 5rem 5% 2rem;
+    background: var(--secondary-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footer-info p {
+    margin-top: 1rem;
+    opacity: 0.5;
+    max-width: 300px;
+}
+
+.footer-links h4 {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+    opacity: 0.5;
+    transition: var(--transition-smooth);
+}
+
+/* AFC Interactive Showcase */
+.afc-showcase-container {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    scroll-margin-top: 100px;
+}
+
+.afc-text-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.afc-specs {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.afc-specs span {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent-color);
+}
+
+.afc-simulation-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.simulation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#afc-slider {
+    width: 60%;
+    accent-color: var(--accent-color);
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#afc-demo-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.simulation-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 51, 153, 0.8);
+    padding: 5px 15px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 968px) {
+    .afc-showcase-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.copyright {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    opacity: 0.3;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        display: none;
+    }
+}
+
+/* Contact Page Specific */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-item p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.map-container {
+    width: 100%;
+    height: 450px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

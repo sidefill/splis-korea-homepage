@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPLIS KOREA | Engineering-First Integration</title>
+    <meta name="description" content="고성능 음향 및 지능형 제어 시스템 통합 엔지니어링 솔루션 전문 기업">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-wrapper">
+                <span class="logo-main">SPL</span>
+                <div class="logo-wave"></div>
+            </div>
+            <span class="logo-sub">INTEGRATED SOLUTIONS KOREA</span>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="index.html#library">Tech Library</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="cta-btn">INQUIRY</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>
+                INTEGRATED<br>
+                <div class="kinetic-text">
+                    <span>ENGINEERING</span>
+                    <span>SOUND DESIGN</span>
+                    <span>INTELLIGENT CONTROL</span>
+                    <span>AV SOLUTIONS</span>
+                    <span>ENGINEERING</span>
+                </div>
+            </h1>
+            <p>공학적 데이터와 기술 기반으로 최상의 음향 및 지능형 제어 환경을 설계합니다. 우리는 단순한 장비 공급을 넘어 최적화된 통합 솔루션을 제공합니다.</p>
+            <div class="hero-scroll">SCROLL TO EXPLORE</div>
+        </section>
+
+        <section id="solutions" class="section">
+            <h2 class="section-title">CORE SOLUTIONS</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>High-Performance Audio</h3>
+                    <p>NEXO와의 강력한 파트너십을 통해 고성능 확성 시스템과 정밀한 음향 시뮬레이션 데이터를 제공합니다.</p>
+                </div>
+                <div class="card">
+                    <h3>Intelligent Control</h3>
+                    <p>Extron 및 Yamaha 기술을 통합하여 복잡한 AV 환경을 Python 기반 스크립트로 자동화하고 제어합니다.</p>
+                </div>
+                <a href="#library-afc" class="card card-afc" id="afc-card">
+                    <div class="afc-visualizer"></div>
+                    <div class="card-content">
+                        <h3>Immersive Experience (AFC/SFC)</h3>
+                        <p>Sound xR 및 Yamaha AFC 기술을 통해 공간의 물리적 한계를 넘어서는 몰입형 사운드 필드를 설계합니다. 클릭하여 기술 상세 및 시뮬레이션을 확인하세요.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="library" class="section" style="background: var(--secondary-bg);">
+            <h2 class="section-title">TECH LIBRARY</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Technical Whitepapers</h3>
+                    <p>역사적 건물 리노베이션부터 최첨단 스포츠 경기장까지, 축적된 엔지니어링 데이터를 공유합니다.</p>
+                </div>
+                <div class="card">
+                    <h3>Design Resources</h3>
+                    <p>NS-1 시뮬레이션 도구 및 BIM/CAD 기술 리소스를 통해 설계 전문가들을 지원합니다.</p>
+                </div>
+            </div>
+
+            <!-- AFC Interactive Showcase Section -->
+            <div id="library-afc" class="afc-showcase-container" style="margin-top: 5rem;">
+                <div class="afc-text-content">
+                    <h3>AFC (Active Field Control) Technology</h3>
+                    <p>Yamaha의 AFC 기술은 건축적 수정 없이 디지털 신호 처리를 통해 공간의 잔향 시간(RT60)과 음계감을 정밀하게 제어합니다. 아래 시뮬레이터를 통해 공간이 확장되는
+                        'The Elastic Room' 경험을 체험해 보세요.</p>
+                    <div class="afc-specs">
+                        <span><strong>AFC Enhance:</strong> 음장 강화 (잔향감 확장)</span>
+                        <span><strong>AFC Image:</strong> 음상 제어 (객체 기반 오디오)</span>
+                    </div>
+                </div>
+                <div class="afc-simulation-box">
+                    <div class="simulation-header">
+                        <label>Reverberation Time (RT60): <span id="rt-value">1.2s</span></label>
+                        <input type="range" id="afc-slider" min="0.5" max="3.5" step="0.1" value="1.2">
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas id="afc-demo-canvas"></canvas>
+                        <div class="simulation-overlay">
+                            <span id="room-mode">CONCERT HALL MODE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="logo">SPLIS KOREA</div>
+                <p>Advanced Engineering for Audiovisual Integration & Control Systems.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Solutions</h4>
+                <ul>
+                    <li>Corporate Boardrooms</li>
+                    <li>Performance Halls</li>
+                    <li>Sports Stadiums</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li>White Papers</li>
+                    <li>Case Studies</li>
+                    <li>Technical Specs</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Partners</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 SPLIS KOREA. All Rights Reserved. Engineering-First Integration.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
