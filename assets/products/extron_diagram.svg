@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" style="background-color: #ffffff;">
+  <!-- Styles -->
+  <style>
+    .device-box { fill: #f0f0f0; stroke: #333; stroke-width: 2; }
+    .device-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; text-anchor: middle; }
+    .label-text { font-family: Arial, sans-serif; font-size: 12px; fill: #666; text-anchor: middle; }
+    .cable-video { stroke: #e74c3c; stroke-width: 3; fill: none; }
+    .cable-control { stroke: #3498db; stroke-width: 3; stroke-dasharray: 5,5; fill: none; }
+    .cable-audio { stroke: #f1c40f; stroke-width: 3; fill: none; }
+    .arrow { fill: #e74c3c; }
+  </style>
+
+  <!-- Title -->
+  <text x="400" y="40" class="device-text" style="font-size: 20px;">Extron HC 404 Meeting Space System</text>
+
+  <!-- Sources -->
+  <rect x="50" y="100" width="100" height="60" rx="5" class="device-box" />
+  <text x="100" y="130" class="device-text">Laptops</text>
+  <text x="100" y="150" class="label-text">HDMI Source</text>
+
+  <rect x="50" y="300" width="100" height="60" rx="5" class="device-box" />
+  <text x="100" y="330" class="device-text">Zoom Room PC</text>
+  <text x="100" y="350" class="label-text">Mac/PC</text>
+
+  <!-- Transmitter -->
+  <rect x="250" y="100" width="120" height="60" rx="5" class="device-box" style="stroke: #007ac9;" />
+  <text x="310" y="130" class="device-text">HC 404 Tx</text>
+  <text x="310" y="150" class="label-text">Transmitter</text>
+
+  <!-- Receiver -->
+  <rect x="500" y="100" width="120" height="60" rx="5" class="device-box" style="stroke: #007ac9;" />
+  <text x="560" y="130" class="device-text">HC 404 Rx</text>
+  <text x="560" y="150" class="label-text">Receiver / Scaler</text>
+
+  <!-- Display -->
+  <rect x="680" y="80" width="100" height="100" rx="2" class="device-box" style="fill: #333; stroke: #000;" />
+  <rect x="685" y="85" width="90" height="90" rx="1" style="fill: #1a1a1a;" />
+  <text x="730" y="135" class="device-text" style="fill: #fff;">Display</text>
+
+  <!-- Touch Panel -->
+  <rect x="380" y="350" width="120" height="80" rx="10" class="device-box" />
+  <rect x="390" y="360" width="100" height="60" style="fill: #222;" />
+  <text x="440" y="395" class="device-text" style="fill: #fff; font-size: 10px;">TouchLink Pro</text>
+  <text x="440" y="450" class="device-text">TLP Pro 1025T</text>
+
+  <!-- Speaker -->
+  <path d="M 680 300 L 720 300 L 740 260 L 660 260 L 680 300 Z" class="device-box" />
+  <text x="700" y="320" class="device-text">Speakers</text>
+
+  <!-- Connections -->
+  <!-- Laptop to Tx -->
+  <line x1="150" y1="130" x2="250" y2="130" class="cable-video" />
+  <!-- Tx to Rx (HDBaseT) -->
+  <line x1="370" y1="130" x2="500" y2="130" class="cable-video" style="stroke: #ffa500;" />
+  <text x="435" y="120" class="label-text">HDBaseT</text>
+  
+  <!-- Rx to Display -->
+  <line x1="620" y1="130" x2="680" y2="130" class="cable-video" />
+
+  <!-- PC to Rx (HDMI content) -->
+  <path d="M 150 330 L 560 330 L 560 160" class="cable-video" style="fill: none; opacity: 0.3;" />
+
+  <!-- Control (Ethernet) -->
+  <path d="M 440 350 L 440 250 L 310 250 L 310 160" class="cable-control" />
+  <path d="M 440 250 L 560 250 L 560 160" class="cable-control" />
+  <text x="440" y="240" class="label-text">Ethernet / Control</text>
+
+  <!-- Audio -->
+  <path d="M 600 160 L 600 280 L 700 280" class="cable-audio" />
+  <text x="630" y="270" class="label-text">Audio</text>
+
+  <!-- Legend -->
+  <rect x="50" y="420" width="200" height="60" style="fill: none; stroke: #ccc;" />
+  <line x1="60" y1="435" x2="90" y2="435" class="cable-video" /> <text x="100" y="440" class="label-text" style="text-anchor: start;">Video (HDMI/HDBT)</text>
+  <line x1="60" y1="455" x2="90" y2="455" class="cable-control" /> <text x="100" y="460" class="label-text" style="text-anchor: start;">Control (LAN)</text>
+  <line x1="60" y1="475" x2="90" y2="475" class="cable-audio" /> <text x="100" y="480" class="label-text" style="text-anchor: start;">Analog Audio</text>
+
+</svg>

@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.lineJoin = 'round';
 
             const time = Date.now() * 0.005;
-            const wave = Math.sin(i * 0.4 + time) * (20 * (i / numPoints));
+            const wave = Math.sin(i * 0.4 + time) * (50 * (i / numPoints));
 
             const xc = (points[i].x + points[i - 1].x) / 2;
             const yc = (points[i].y + points[i - 1].y) / 2 + wave;
@@ -207,4 +207,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         drawSimulation();
     }
+
 });
+
+// Load YouTube Video Inline
+function loadVideo(container, videoId) {
+    container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>`;
+    container.classList.add('playing');
+}
+
+function loadLocalVideo(container, videoPath) {
+    container.innerHTML = `<video src="${videoPath}" autoplay muted loop playsinline controls style="width: 100%; height: 100%; object-fit: cover;"></video>`;
+    container.classList.add('playing');
+}
+
+// Product Page Hero Slideshow
+if (document.querySelector('.product-hero')) {
+    const hero = document.querySelector('.product-hero');
+    const images = [
+        'url("assets/products/ghost.png")',
+        'url("assets/products/ghost1.jpg")',
+        'url("assets/products/ghost2.jpg")',
+        'url("assets/products/ghost3.jpg")'
+    ];
+    let currentIndex = 0;
+
+    // Preload images
+    images.forEach(imgUrl => {
+        const img = new Image();
+        img.src = imgUrl.replace('url("', '').replace('")', '');
+    });
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        hero.style.backgroundImage = `linear-gradient(rgba(5, 5, 5, 0.3), rgba(5, 5, 5, 0.3)), ${images[currentIndex]}`;
+    }, 5000);
+}

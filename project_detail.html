@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail | SPLIS KOREA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-wrapper">
+                <span class="logo-main">SPL</span>
+                <div class="logo-wave"></div>
+            </div>
+            <span class="logo-sub">INTEGRATED SOLUTIONS KOREA</span>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="index.html#library">Tech Library</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="cta-btn">INQUIRY</a>
+    </header>
+
+    <main>
+        <!-- Project Hero -->
+        <section class="hero project-hero">
+            <div class="project-header">
+                <span class="project-category">PERFORMANCE HALL</span>
+                <h1 id="project-title">LG Arts Center Seoul</h1>
+                <p class="project-meta">Seoul, Korea | 2022 | Audio & Control Renewal</p>
+            </div>
+        </section>
+
+        <!-- Project Content -->
+        <section class="section project-content">
+            <div class="container">
+                <div class="project-grid">
+                    <div class="project-text">
+                        <h3>The Challenge</h3>
+                        <p>
+                            To replace an aging analog infrastructure with a fully redundant,
+                            high-performance digital network capable of handling complex
+                            immersive audio productions. The system needed to be invisible
+                            to the audience yet accessible to engineers.
+                        </p>
+
+                        <h3>The Solution</h3>
+                        <p>
+                            We implemented a massive Dante network backbone using Agora Ghost
+                            switches, connecting over 200 endpoints. Yamaha DME7 processors
+                            handle the spatial audio processing, while custom Extron touch
+                            panels provide intuitive control for stage managers.
+                        </p>
+                    </div>
+                    <div class="project-specs">
+                        <h3>System Highlights</h3>
+                        <ul class="tech-list">
+                            <li><strong>Core:</strong> Yamaha DME7 DSP</li>
+                            <li><strong>Network:</strong> Agora Ghost-mk2 (Redundant)</li>
+                            <li><strong>Speakers:</strong> NEXO P12 & ID Series</li>
+                            <li><strong>Control:</strong> Extron IPCP Pro xi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-gallery">
+                    <img src="assets/about/hero.jpg" alt="Project Image 1">
+                    <img src="assets/products/yamaha_dme7.jpg" alt="Project Image 2">
+                </div>
+
+                <div class="back-link-wrapper">
+                    <a href="about.html" class="back-link">← Back to Portfolio</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="logo">SPLIS KOREA</div>
+                <p>Advanced Engineering for Audiovisual Integration & Control Systems.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Solutions</h4>
+                <ul>
+                    <li>Corporate Boardrooms</li>
+                    <li>Performance Halls</li>
+                    <li>Sports Stadiums</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li>White Papers</li>
+                    <li>Case Studies</li>
+                    <li>Technical Specs</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Partners</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 SPLIS KOREA. All Rights Reserved. Engineering-First Integration.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple script to change content based on query param (Optional simulation)
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        if (projectId === 'stadium') {
+            document.getElementById('project-title').textContent = "Incheon Asiad Stadium";
+            document.querySelector('.project-category').textContent = "SPORTS ARENA";
+            document.querySelector('.project-hero').style.backgroundImage = "url('assets/products/nexo_p12.jpg')";
+        } else if (projectId === 'conference') {
+            document.getElementById('project-title').textContent = "Samsung HQ Boardroom";
+            document.querySelector('.project-category').textContent = "CORPORATE";
+            document.querySelector('.project-hero').style.backgroundImage = "url('assets/products/extron_tlp.jpg')";
+        }
+    </script>
+</body>
+
+</html>
