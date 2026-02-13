@@ -498,6 +498,10 @@ footer {
 
     nav ul li a {
         font-size: 0.8rem;
+        display: inline-block;
+        /* Ensure padding works */
+        padding: 0.5rem;
+        /* Increase touch target */
     }
 
     .cta-btn {
